@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book List</title>
+</head>
+
+<body>
+    <h1>Edit Food</h1>
+    <form action="/foods/<%=food._id %>?_method=PUT" method="POST">
+        <!--  NOTE: the form is pre-populated with values for the server-->
+        Name: <input type="text" name="name" value="<%=food.name%>" /><br />
+        Category: <input type="text" name="category" value="<%=food.category%>" /><br />
+        Price: <input type="text" name="price" value="<%=food.price%>" /><br />
+        Paid: <input type="checkbox" name="paid" <% if(food.paid===true){ %> checked <% } %> />
+            <br />
+            <input type="submit" value="Submit Changes" />
+    </form>
+</body>
+
+</html>
