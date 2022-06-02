@@ -4,9 +4,10 @@ const foodSchema = new mongoose.Schema({
     Name: { type: String, required: true },
     Category: { type: String, required: true },
     Price: { type: String, required: true },
-    paid: Boolean,
+    Paid: Boolean,
+    Image: { type: String, required: true },
 });
 
-const Book = mongoose.model('Food', foodSchema);
+const Food = mongoose.model('Food', foodSchema);
 
-module.exports = Book
+module.exports = Food

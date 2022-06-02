@@ -12,10 +12,10 @@
     <h1>Edit Food</h1>
     <form action="/foods/<%=food._id %>?_method=PUT" method="POST">
         <!--  NOTE: the form is pre-populated with values for the server-->
-        Name: <input type="text" name="name" value="<%=food.name%>" /><br />
-        Category: <input type="text" name="category" value="<%=food.category%>" /><br />
-        Price: <input type="text" name="price" value="<%=food.price%>" /><br />
-        Paid: <input type="checkbox" name="paid" <% if(food.paid===true){ %> checked <% } %> />
+        Name: <input type="text" name="Name" value="<%=food.Name%>" /><br />
+        Category: <input type="text" name="Category" value="<%=food.Category%>" /><br />
+        Price: <input type="text" name="Price" value="<%=food.Price%>" /><br />
+        Paid: <input type="checkbox" name="Paid" <% if(food.Paid===true){ %> checked <% } %> />
             <br />
             <input type="submit" value="Submit Changes" />
     </form>

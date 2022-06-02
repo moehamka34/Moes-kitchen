@@ -1,6 +1,6 @@
 // require dependencies
 const express = require('express'); // node modules use the singleton pattern
-const Food = require('./models/food');
+const Food = require('../models/food');
 // initialize the router object
 const router = express.Router(); // factory function - function that returns an object once invoked
 // define router/controller code
@@ -12,7 +12,7 @@ const router = express.Router(); // factory function - function that returns an 
 	//Food.deleteMany({}, (error, allFoods) => {});
 
 	//Food.create(foodSeed, (error, data) => {
-		res.redirect('/foods');
+		//res.redirect('/foods');
 	//});
 //});
 
@@ -31,6 +31,7 @@ router.get('/new', (req, res) => {
     res.render('new.ejs');
 })
 
+
 // DELETE
 router.delete("/:id", (req, res) => {
     Food.findByIdAndDelete(req.params.id, (err, data) => {
@@ -40,10 +41,10 @@ router.delete("/:id", (req, res) => {
 
 // UPDATE
 router.put('/:id', (req, res) => {
-    if (req.body.completed === "on") {
-        req.body.completed = true
+    if (req.body.Paid === "on") {
+        req.body.Paid = true
     } else {
-        req.body.completed = false
+        req.body.Paid = false
     }
     
     Food.findByIdAndUpdate(
@@ -52,7 +53,7 @@ router.put('/:id', (req, res) => {
         {
             new: true,
         },
-        (error, updatedBook) => {
+        (error, updatedFood) => {
             res.redirect(`/foods/${req.params.id}`)
         }
     )
@@ -61,12 +62,12 @@ router.put('/:id', (req, res) => {
 // CREATE
 router.post('/', (req, res) => {
 
-    if (req.body.completed === 'on') {
+    if (req.body.Paid === 'on') {
         //if checked, req.body.completed is set to 'on'
-        req.body.completed = true;
+        req.body.Paid = true;
     } else {
         //if not checked, req.body.completed is undefined
-        req.body.completed = false;
+        req.body.Paid = false;
     }
 
     Food.create(req.body, (error, createdFood) => {
@@ -78,19 +79,20 @@ router.post('/', (req, res) => {
 router.get("/:id/edit", (req, res) => {
     Food.findById(req.params.id, (error, foundFood) => {
         res.render("edit.ejs", {
-            Food: foundFood,
+            food: foundFood,
         })
     })
 })
 
 // SHOW
-router.get('/:id', (req, res) => {
-    Food.findById(req.params.id, (err, foundFood) => {
-        res.render('show.ejs', {
-            food: foundFood,
-        });
-    });
-});
+router.get("/:id", (req, res) => {
+    Food.findById(req.params.id, (err, foods) => {
+        console.log(foods)
+        res.render("show.ejs", {
+            food: foods
+        })
+    })
+})
 
 // export the router object using module.exports
 module.exports = router;

@@ -10,24 +10,47 @@
 
 <body>
     <nav>
-        <a href="/books/new">Add a New Food</a>
+        <a href="/foods/new">Add a New Food</a>
     </nav>
 
-    <h1>My Food List</h1>
+    <h1> Moe's Kitchen </h1>
+   
+    
     <ul>
-        <% foods.forEach(food=> { %>
-            <li>
-                <a href="/foods/<%=food._id; %>">
-                    <%=food.name; %>
-                </a>
-                <form  action="/foods/<%= food.id %>?_method=DELETE" method="POST" style="display:inline; margin-left:16px;">
-                    <input type="submit" value="DELETE" />
-                </form>
-                <a href="/foods/<%=food._id %>/edit">Edit</a>
-            </li>
-            <% }) %>
+      <% for(var i = 0; i < foods.length; i++){ %>
+      <li>
+         <a href="/foods/<%=foods[i]._id%>"><%=foods[i].Name; %></a> 
+      </li>
+      <% } %>
     </ul>
+
+  
 
 </body>
 
+<style>
+  h1 {
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(255, 102, 0);
+  }
+  h2 {
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(229, 255, 0);
+  }
+  body{
+    background-image: url(https://i.imgur.com/JsCpjJi.jpg?1);
+  }
+
+  a{
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: larger;
+    color: brown;
+   }
+   ul {
+     align-items:baseline;
+   }
+
+</style>
 </html>
