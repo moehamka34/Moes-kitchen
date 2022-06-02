@@ -9,6 +9,9 @@
 </head>
 
 <body>
+    <nav>
+        <a href="/foods">Back to Menu</a>
+    </nav>
     <h1>Edit Food</h1>
     <form action="/foods/<%=food._id %>?_method=PUT" method="POST">
         <!--  NOTE: the form is pre-populated with values for the server-->
@@ -17,8 +20,27 @@
         Price: <input type="text" name="Price" value="<%=food.Price%>" /><br />
         Paid: <input type="checkbox" name="Paid" <% if(food.Paid===true){ %> checked <% } %> />
             <br />
+            Image: <input type="text" name="Image" value="<%=food.Image%>" /><br /> 
             <input type="submit" value="Submit Changes" />
     </form>
 </body>
+<style>
+     body{
+		   background-image: url(https://i.imgur.com/9TTZfB6.jpg?1);
+	   }
+	   input{
+		   margin-bottom: 10px;
+       }
+    
+	   h1 {
+		   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+		   color: rgb(234, 220, 26);
+	   }
+	   form {
+		   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+		   color: rgb(7, 249, 184);
+		   justify-content:end;
+	   }
+</style>
 
 </html>
