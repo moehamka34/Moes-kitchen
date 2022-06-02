@@ -12,15 +12,15 @@
 <li>Heroku</li>
 <li>Express</li>
 
-<h1>ScreenShots</h1>
+<h1>Screen-Shots</h1>
 <img src="https://i.imgur.com/9WJ1vuj.png" alt="index page">
 <img src="https://i.imgur.com/1FP3hId.png" alt="new page">
 <img src="https://i.imgur.com/FdNv4ge.png" alt="show page">
 <img src="https://i.imgur.com/xfbZDPS.png" alt="edit page">
 
 <h1>Getting Started</h1>
-<p>Access the website through this link</p>
+<p>Access the website through this link.</p>
 <a href="https://moes-kitchen.herokuapp.com/foods">Click Here</a>
 
 <h1>Next Steps</h1>
-<li>Some future enhancements that I would like to to is, splitting them up into sections instead of lining them all in one order. Also add some more styling to make it look more appealing.</li>
+<li>Some future enhancements that I would like to do is, splitting them up into sections instead of lining them all in one order. Also add some more styling to make it look more appealing.</li>
