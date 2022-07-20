@@ -11,6 +11,10 @@
 <li>Mongoose</li>
 <li>Heroku</li>
 <li>Express</li>
+<li>Docker</li>
+<li>Jenkins</li>
+<li>Mocha</li>
+<li>Chai</li>
 
 <h1>Screen-Shots</h1>
 <img src="https://i.imgur.com/9WJ1vuj.png" alt="index page">
